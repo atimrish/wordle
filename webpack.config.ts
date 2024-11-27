@@ -16,7 +16,7 @@ export default (env: webpackEnv): webpack.Configuration => {
         devtool: 'inline-source-map',
         output: {
             path: path.resolve('dist'),
-            filename: 'bundle-[contenthash-8].js',
+            filename: 'bundle-[contenthash:8].js',
             clean: true
         },
         entry: path.resolve('src', 'index.tsx'),
