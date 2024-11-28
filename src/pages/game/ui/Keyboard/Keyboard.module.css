@@ -1,0 +1,28 @@
+.keyboard_container {
+    margin-top: 80px;
+}
+
+.keyboard_row {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.keyboard_row > * {
+    flex: 1;
+    height: 50px;
+    color: var(--white);
+    background-color: var(--gray);
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: 0.1s opacity ease-in;
+    user-select: none;
+}
+
+.keyboard_row > *:hover {
+    opacity: 0.8;
+}

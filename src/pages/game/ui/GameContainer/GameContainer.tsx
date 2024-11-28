@@ -2,6 +2,7 @@ import * as s from './GameContainer.module.css'
 import {WordInput} from "@src/pages/game/ui/WordInput";
 import {getWordById, TGameState} from "@src/entities/game/model";
 import {useAppSelector} from "@src/shared/lib";
+import {Keyboard} from "@src/pages/game/ui/Keyboard";
 
 const GameContainer = () => {
     const words = (() => {
@@ -17,10 +18,14 @@ const GameContainer = () => {
     return (
         <>
             <div className={s.container}>
-                {
-                    words.map((word, index) => <WordInput key={index} value={word}/>)
-                }
+                <div>
+                    {
+                        words.map((word, index) => <WordInput key={index} value={word}/>)
+                    }
+                </div>
+                <Keyboard/>
             </div>
+
         </>
     )
 }
