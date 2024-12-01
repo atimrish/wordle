@@ -2,6 +2,9 @@
     --black: #121213;
     --gray: #3a3a3c;
     --white: #f8f8f8;
+    --yellow: #b59f3b;
+    --darkgray: #1b1b1b;
+    --green: #538d4e;
 }
 
 :global * {
@@ -10,9 +13,17 @@
     box-sizing: border-box;
 }
 
-:global body {
+:global #root {
     background-color: var(--black);
     display: grid;
     place-items: center;
     height: 100vh;
+}
+
+:global #modal-portal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
 }

@@ -18,3 +18,49 @@
     font-family: sans-serif;
     font-size: 24px;
 }
+
+.matched_char {
+    background-color: var(--green);
+    animation: show ease 0.3s forwards;
+}
+
+.included_char {
+    background-color: var(--yellow);
+    animation: show ease 0.3s forwards;
+}
+
+.wrong_char {
+    background-color: var(--darkgray);
+    animation: show ease 0.3s forwards;
+}
+
+.unknown {
+    animation: wiggle 0.5s forwards ease-in-out;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: translateX(-10px);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes show {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}

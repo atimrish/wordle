@@ -1,0 +1,23 @@
+.container {
+    width: 400px;
+    background: var(--black);
+    padding: 40px;
+}
+
+.heading {
+    font-family: sans-serif;
+    color: var(--white);
+    text-align: center;
+    font-size: 32px;
+}
+
+.button {
+    margin-top: 40px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    background-color: var(--black);
+    border: 1px solid var(--gray);
+    color: var(--white);
+    cursor: pointer;
+}

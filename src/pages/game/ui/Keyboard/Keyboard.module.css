@@ -26,3 +26,15 @@
 .keyboard_row > *:hover {
     opacity: 0.8;
 }
+
+.matched {
+    background-color: var(--green);
+}
+
+.included {
+    background-color: var(--yellow);
+}
+
+.wrong {
+    background-color: rgba(0, 0, 0, 0.57);
+}
