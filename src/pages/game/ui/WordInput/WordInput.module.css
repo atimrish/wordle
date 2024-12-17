@@ -1,18 +1,18 @@
 .word {
     display: flex;
-    gap: 16px;
+    gap: clamp(4px, 2vw, 16px);
     justify-content: center;
-    margin: 16px 0;
+    margin: clamp(4px, 2vw, 16px) 0;
 }
 
 .word > * {
-    width: 60px;
-    height: 60px;
+    width: clamp(50px, 3vw, 60px);
+    height: clamp(50px, 3vw, 60px);
     border: 1px solid var(--gray);
 }
 
 .letter {
-    line-height: 60px;
+    line-height: clamp(50px, 3vw, 60px);
     color: var(--white);
     text-align: center;
     font-family: sans-serif;

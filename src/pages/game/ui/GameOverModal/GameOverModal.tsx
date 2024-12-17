@@ -15,7 +15,7 @@ export const GameOverModal = () => {
                 <div className={s.container}>
                     <h2 className={s.heading}>Игра окончена</h2>
                     <div className={s.current_word_container}>
-                        Загадонное слово: <span className={s.current_word}>{currentWord}</span>
+                        Загаданное слово: <span className={s.current_word}>{currentWord}</span>
                     </div>
 
                     <button
