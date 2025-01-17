@@ -57,13 +57,13 @@ export const gameSlice = createSlice({
             state.words[state.pointer] = currentWord.slice(0, currentWord.length - 1)
         },
         enterPointedWord: (state) => {
+            //проверка, состоит ли слово из 5 букв
             if (state.words[state.pointer].length === 5) {
-                if (state.pointer < 6) {
-                    if (state.words[state.pointer] === state.currentWord) {
-                        state.wordMatches[state.pointer] = new Array(5).fill('matched')
-                        state.gameWin = true
-
-                    } else if (getWords().includes(state.words[state.pointer].toLowerCase())) {
+                if (state.words[state.pointer] === state.currentWord) {
+                    state.wordMatches[state.pointer] = new Array(5).fill('matched')
+                    state.gameWin = true
+                } else if (getWords().includes(state.words[state.pointer].toLowerCase())) {
+                    if (state.pointer < 6) {
                         state.words[state.pointer]
                             .split('')
                             .forEach((char, index) => {
@@ -80,11 +80,11 @@ export const gameSlice = createSlice({
                             })
                         state.pointer++
                     } else {
-                        state.unknownIndex = state.pointer
+                        state.gameOver = true
+                        state.pointer++ //это нужно для сняния возможности редактирования
                     }
                 } else {
-                    state.gameOver = true
-                    state.pointer++ //это нужно для сняния возможности редактирования
+                    state.unknownIndex = state.pointer
                 }
             }
         },
@@ -104,7 +104,9 @@ export const gameSlice = createSlice({
             state.wordMatches = initialState.wordMatches
             state.unknownIndex = initialState.unknownIndex
         }),
-        removeUnknownIndex: (state) => { state.unknownIndex = undefined }
+        removeUnknownIndex: (state) => {
+            state.unknownIndex = undefined
+        }
     }
 })
 
